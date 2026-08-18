@@ -30,7 +30,9 @@ The interactive shell supports the following core commands:
    cd bash-in-golang
 
 2. **Run the program:**
-    ```go run bash-in-golang.go```
+    ```
+     go run bash-in-golang.go
+    ```
 
 3. **Or build an executable:**
 ```go build -o mybash main.go
