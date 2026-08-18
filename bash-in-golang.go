@@ -27,6 +27,11 @@ func main(){
 		fmt.Println("Enter folder name:")
 		fmt.Scan(&path)
 		mkdir(path)
+	}else if command == "touch"{
+		var filename string
+		fmt.Println("enter file name:")
+		fmt.Scan(&filename)
+		touch(filename)
 	}
   }
 }
@@ -65,4 +70,14 @@ func mkdir(path string){
 		return
 	}
 	fmt.Println("Directory successfully created:", path)
+}
+func touch(filename string){
+	file, err := os.Create(filename)
+	if err != nil{
+		fmt.Println("File create error:", err)
+		return
+	}
+
+	file.Close()
+	fmt.Println("File successfully create:",filename)
 }
