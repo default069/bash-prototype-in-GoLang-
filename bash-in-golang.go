@@ -32,6 +32,11 @@ func main(){
 		fmt.Println("enter file name:")
 		fmt.Scan(&filename)
 		touch(filename)
+	}else if command == "exit"{
+		fmt.Println("exit bash protatype")
+		break
+	}else{
+		fmt.Println("Unknown command. Try again.")
 	}
   }
 }
