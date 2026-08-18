@@ -22,6 +22,11 @@ func main(){
 		fmt.Println("Enter the path to the folder:")
 		fmt.Scan(&path)
 		cd(path)
+	}else if command == "mkdir"{
+		var path string
+		fmt.Println("Enter folder name:")
+		fmt.Scan(&path)
+		mkdir(path)
 	}
   }
 }
@@ -52,4 +57,12 @@ func cd(path string){
 	if err == nil {
 		fmt.Println("We have successfully transitioned to:", currentDir)
 	} 
+}
+func mkdir(path string){
+	err := os.Mkdir(path, 0755)
+	if err != nil{
+		fmt.Println("Directory creation error:",err)
+		return
+	}
+	fmt.Println("Directory successfully created:", path)
 }
